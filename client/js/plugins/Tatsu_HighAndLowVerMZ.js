@@ -17,8 +17,8 @@
  * 概要
  *-----------------------------------------------------------------------------
  * 本プラグインは、ゲーム内にてトランプゲームの「HIGH&LOW」を実装するプラグインです。
- * 
- * 
+ *
+ *
  *-----------------------------------------------------------------------------
  * 設定方法/PluginManager Setting
  *-----------------------------------------------------------------------------
@@ -28,7 +28,7 @@
  *-----------------------------------------------------------------------------
  * 変更履歴
  *-----------------------------------------------------------------------------
- * 
+ *
  * Ver 1.0.0 初版
  * Ver 1.0.1 所持コイン数が最低BET未満の場合、進行不能になるバグを修正
  * Ver 1.0.2 サブフォルダにプラグインを入れた時に動かなくなるバグを対応
@@ -37,16 +37,16 @@
  *-----------------------------------------------------------------------------
  * 素材著作権
  *-----------------------------------------------------------------------------
- * 
+ *
  * 【デフォルトで使用している音楽、および効果音】
  * 　->魔王魂樣
  * 【URL】
  * 　->https://maoudamashii.jokersounds.com/
- * 
+ *
  *
  * 【背景画像/トランプ画像素材】
  * 　->タツノコ
- * 
+ *
  *-----------------------------------------------------------------------------
  * その他利用規約
  *-----------------------------------------------------------------------------
@@ -60,7 +60,7 @@
  * @desc ゲーム背景を設定できます。
  * @type file
  * @dir img
- * 
+ *
  * @param coinUse
  * @desc コインを使用するかどうか
  * @on 使用する（true）
@@ -76,53 +76,53 @@
  * @desc コインを使用する場合、コインの使用枚数
  * @type Number[]
  * @default ["1","10","100"]
- * 
+ *
  * @param winSe
  * @desc 勝負に勝った時の効果音
  * @type file
  * @dir audio
  * @default se/se_fanfale
- * 
+ *
  * @param loseSe
  * @desc 勝負に負けた時の効果音
  * @type file
  * @dir audio
  * @default se/se_lose_fanfale
- * 
+ *
  * @param useBGM
  * @desc 専用BGMを使うかどうか
  * @type boolean
  * @on 使用する（true）
  * @off 使用しない（false）
  * @default false
- * 
+ *
  * @param backBGM
  * @desc 専用BGM
  * @type file
  * @dir audio
  * @default bgm/bgm_kajino
- * 
+ *
  * @param -> ウィンドウのポジション用パラメータ <<<<<<<<<<<<<<<<<<<<<<<
  * @desc
- * 
+ *
  * @param betCoinSelectPosX
  * @text BetするコインのselectウィンドウのX座標位置
  * @desc BetするコインのselectウィンドウのX座標位置
  * @default 100
  * @parent -> ウィンドウのポジション用パラメータ <<<<<<<<<<<<<<<<<<<<<<<
- * 
+ *
  * @param betCoinSelectPosY
  * @text BetするコインのselectウィンドウのY座標位置
  * @desc BetするコインのselectウィンドウのY座標位置
  * @default 294
  * @parent -> ウィンドウのポジション用パラメータ <<<<<<<<<<<<<<<<<<<<<<<
- * 
+ *
  * @param betCoinSelectWidth
  * @text Betするコインのselectウィンドウの幅
  * @desc Betするコインのselectウィンドウの幅
  * @default 120
  * @parent -> ウィンドウのポジション用パラメータ <<<<<<<<<<<<<<<<<<<<<<<
- * 
+ *
  * @param betCoinSelectHeight
  * @text Betするコインのselectウィンドウの高さ
  * @desc Betするコインのselectウィンドウの高さ
@@ -140,40 +140,43 @@
  * @off 自動調整をしない（false）
  * @default true
  * @parent -> コインの枚数を表示するウィンドウ用パラメータ <<<<<<<<<<<<<<<<<<<<<<<
- * 
+ *
  * @param coinWindowX
  * @text コインを表示するウィンドウのX座標の位置
  * @desc コインを表示するウィンドウのX座標の位置
  * @default 600
  * @parent -> コインの枚数を表示するウィンドウ用パラメータ <<<<<<<<<<<<<<<<<<<<<<<
- * 
+ *
  * @param coinWindowY
  * @text コインを表示するウィンドウのY座標の位置
  * @desc コインを表示するウィンドウのY座標の位置
  * @default 50
  * @parent -> コインの枚数を表示するウィンドウ用パラメータ <<<<<<<<<<<<<<<<<<<<<<<
- * 
+ *
  * @param coinWindowWidth
  * @text コインを表示するウィンドウの幅
  * @desc コインを表示するウィンドウの幅
  * @default 210
  * @parent -> コインの枚数を表示するウィンドウ用パラメータ <<<<<<<<<<<<<<<<<<<<<<<
- * 
+ *
  * @param coinWindowHeight
  * @text コインを表示するウィンドウの高さ
  * @desc コインを表示するウィンドウの高さ
  * @default 110
  * @parent -> コインの枚数を表示するウィンドウ用パラメータ <<<<<<<<<<<<<<<<<<<<<<<
- * 
+ *
  * @param coinWindowStringSize
  * @text コインを表示するウィンドウの文字サイズ
  * @desc コインを表示するウィンドウの文字サイズ
  * @default 19
  * @parent -> コインの枚数を表示するウィンドウ用パラメータ <<<<<<<<<<<<<<<<<<<<<<<
- *  
+ *
  */
 
 (function(){
+
+    const symbol = require("/node_modules/symbol-sdk");
+
 
     var getArgJson = function(arg, defaultValue) {
         try {
@@ -195,7 +198,7 @@
         }
         return para;
     };
-    
+
     var HighAndLowP = HighAndLowP || {};
     var parameters = parameterNotNull();
     HighAndLowP.coinUseStr = String(parameters['coinUse'] || "false");
@@ -240,7 +243,7 @@
         rect.height = height;
         return rect;
     };
-    
+
     function getdummyWindowRect(){
         var rect = new Rectangle();
         var width = 1;
@@ -251,7 +254,7 @@
         rect.height = height;
         return rect;
     };
-    
+
     function CardInfo (){
         this.initialize.apply(this,arguments);
     };
@@ -291,7 +294,7 @@
     PluginManager.registerCommand(pluginName, "show", args => {
         SceneManager.push(Scene_HighAndLowScene);
 	});
-	
+
     function Scene_HighAndLowScene(){
         this.initialize.apply(this,arguments);
     };
@@ -382,7 +385,7 @@
             this._myHandWindow.select(-1);
         }
     };
-  
+
     Scene_HighAndLowScene.prototype.start = function(){
         Scene_MenuBase.prototype.start.call(this);
         if (HighAndLowP.coinUse) {
@@ -412,7 +415,7 @@
             AudioManager.fadeOutBgm(1);
             var bgm = HighAndLowP.backBGM;
             var tmpFolder = "bgm/";
-            
+
             if (bgm != "" && bgm != null) {
                 AudioManager.playBgm({"name":bgm.substr(tmpFolder.length),"volume":80,"pitch":100,"pan":0});
             } else {
@@ -439,7 +442,7 @@
                 break;
             case 'mySelect':
                 this.myTurn();
-                break;                
+                break;
             case 'deal':
                 this.deal();
                 break;
@@ -472,7 +475,7 @@
                         this.popScene();
                     }
                 } else {
-                    this.exitGame();               
+                    this.exitGame();
                 }
 
                 break;
@@ -519,7 +522,7 @@
                     if (HighAndLowP.useBgm) {
                         AudioManager.fadeOutBgm(1);
                         $gameSystem.replayBgm();
-                    }                  
+                    }
                     this.popScene();
                 }
             }
@@ -550,31 +553,31 @@
             this._betSelectWindow = new Window_Bet_Select();
             this._betSelectWindow.setHandler('ok',this.betOK.bind(this));
             this.addWindow(this._betSelectWindow);
-            this._betSelectWindow.activate(); 
+            this._betSelectWindow.activate();
         }
 
         if (this._betMsgWindow.isClosed()) {
-            this._betMsgWindow.open();            
+            this._betMsgWindow.open();
         }
 
         if (this._betSelectWindow.isClosed()) {
-            this._betSelectWindow.open();           
+            this._betSelectWindow.open();
         }
-        this._betSelectWindow.activate(); 
+        this._betSelectWindow.activate();
     };
 
     Scene_HighAndLowScene.prototype.betOK = function(){
         var idx = this._betSelectWindow.index();
         var coin = HighAndLowP.betCoinList[idx];
         var nowCoin = $gameVariables.value(HighAndLowP.coinVariable);
-        
+
         if (this._betMsgWindow.isOpen()) {
             this._betMsgWindow.close();
         }
 
         if (this._betSelectWindow.isOpen()) {
-            this._betSelectWindow.deactivate();           
-            this._betSelectWindow.close(); 
+            this._betSelectWindow.deactivate();
+            this._betSelectWindow.close();
         }
 
         if (nowCoin < coin) {
@@ -593,14 +596,14 @@
             this._betCoin = coin;
             var tmpCoin = nowCoin - coin;
             this._getCoin = 0;
-            revokeBetCoin(coin)
+            betCoinTransaction(coin)
 
             $gameVariables.setValue(HighAndLowP.coinVariable, tmpCoin);
             this._resultBetCoinWindow.setDispCoin(this._getCoin);
             this._resultBetCoinWindow.setMyDispCoin($gameVariables.value(HighAndLowP.coinVariable));
             this._step = 'setup';
         }
-    };    
+    };
 
     Scene_HighAndLowScene.prototype.HandOutCardStep = function(){
         if (this._handWindow != undefined && this._handWindow.isClosed()) {
@@ -609,14 +612,14 @@
         if (this._myHandWindow != undefined && this._myHandWindow.isClosed()) {
             this._myHandWindow.open();
         }
-        
+
         this.createResultImage();
         this.HandOutCard();
 
         this._handWindow.cardDraw();
         this._myHandWindow.cardDraw();
         this._step = 'enemySelect';
-    };    
+    };
 
     Scene_HighAndLowScene.prototype.HandOutCard = function(){
         this._enemyCardInfo = new Array();
@@ -674,7 +677,7 @@
 
             this._myHandWindow.setHandler('ok',this.pushOK.bind(this));
             this._myHandWindow.activate();
-            this.addWindow(this._myHandWindow);        
+            this.addWindow(this._myHandWindow);
         } else {
             this._myHandWindow.setCardIndos(this._myCardInfo);
             this._myHandWindow.activate();
@@ -706,7 +709,7 @@
             if (this._selectWindow == undefined) {
                 this._myHandWindow.deactivate();
                 this._handWindow.deactivate();
-        
+
                 this._selectWindow = new Window_HighAndLow_Select(100,300,120,150);
                 this._selectWindow.setHandler('ok',this.dealPushOK.bind(this));
                 this._selectWindow.activate();
@@ -806,7 +809,7 @@
                 var cardSprite = myCardInfo[j].getSprite();
                 cardSprite.x = 12+(j*(80+12));
             }
-    
+
             var enemyCardInfo = this._handWindow.getCardIndos();
             for (var i = 0 ; i < enemyCardInfo.length ; i++) {
                 var enemyCardSprite = enemyCardInfo[i].getSprite();
@@ -845,7 +848,7 @@
             this._confirmLoseMsgWindow = getWindowMessage();
             this.addWindow(this._confirmLoseMsgWindow);
             this._confirmLoseMsgWindow.drawText("初めから再挑戦しますか？",0,0,Graphics.width,300);
-        } 
+        }
 
         if (this._battleResult) {
             this._confirmWinMsgWindow.contents.clear();
@@ -979,7 +982,7 @@
 
                 this.popScene();
             }
-        }   
+        }
     };
 
     //==========================================================
@@ -988,7 +991,7 @@
 
     //==========================================================
     // 手札用のWindow
-    //==========================================================    
+    //==========================================================
     function Window_handCard() {
         this.initialize.apply(this,arguments);
     };
@@ -1066,11 +1069,11 @@
             return this.getCardIndos().length;
         } else {
             return 5;
-        }        
+        }
     };
 
     Window_handCard.prototype.maxCols = function () {
-        return 5;    
+        return 5;
     };
 
     Window_handCard.prototype.colSpacing = function() {
@@ -1086,7 +1089,7 @@
         rect.y = Math.floor(index / maxCols) * rect.height - this._scrollY;
         return rect;
     };
-    
+
     Window_handCard.prototype.cardDraw = function(){
         if (this._cardInfos) {
             var i = 0;
@@ -1100,7 +1103,7 @@
     Window_handCard.prototype.itemWidth = function() {
         return 80;
     };
-    
+
     Window_handCard.prototype.itemHeight = function() {
         return 120;
     };
@@ -1523,7 +1526,7 @@
         this.contents.clear();
         this.dispCoinTxt();
     };
-    
+
     Window_BetCoin_Window.prototype.setDispCoin = function(coin){
         this._dispCoin = coin;
         this.refreshCoin();
@@ -1548,21 +1551,54 @@
         }
     };
 
-        // ゲームコイン回収トランザクション
-        const revokeBetCoin = (amount) => {
-            const type = $gameVariables.value(39);
-            const domain = $gameVariables.value(38);
-            let playerAddress = window.SSS.activeAddress;
-            fetch(`${domain}/v1/mosaic-revocation/game-coin?address=${playerAddress}&amount=${amount}&type=${type}`);
-            console.log("bet")
-        }
-    
-        // 勝利報酬払い出しトランザクション
-        const payoutWinReward = (amount) => {
-            const type = $gameVariables.value(39);
-            const domain = $gameVariables.value(38);
-            let playerAddress = window.SSS.activeAddress;
-            fetch(`${domain}/v1/mosaic-transfer/game-coin?address=${playerAddress}&amount=${amount}&type=${type}`);
-            console.log("reward")
-        }
+    // ゲームコインベットトランザクション
+    const betCoinTransaction = (amount) => {
+        // ノードとネットワーク情報
+        const NODE_URL = $gameVariables.value(3);
+        const GENERATION_HASH = $gameVariables.value(5);
+        const EPOCH_ADJUSTMENT = $gameVariables.value(4);
+        const networkType = symbol.NetworkType.TEST_NET;
+
+        // 送信元アカウントの秘密鍵
+        const privateKey = $gameVariables.value(10);
+        // 秘密鍵からアカウント情報の読み込み
+        const account = symbol.Account.createFromPrivateKey(privateKey, networkType);
+        // 送信先アドレス
+        const targetAddress = $gameVariables.value(12);
+        // ゲームコインmosaicId
+        const sendMosaicId = $gameVariables.value(13);
+        console.log(NODE_URL);
+        console.log(GENERATION_HASH);
+        console.log(EPOCH_ADJUSTMENT);
+        console.log(networkType);
+        console.log(privateKey);
+        console.log(account);
+        console.log(targetAddress);
+        console.log(sendMosaicId)
+
+        // トランザクション作成
+        let tx = symbol.TransferTransaction.create(
+            symbol.Deadline.create(EPOCH_ADJUSTMENT),
+            symbol.Address.createFromRawAddress(targetAddress),
+            [new symbol.Mosaic(new symbol.MosaicId(sendMosaicId), symbol.UInt64.fromUint(amount))],
+            symbol.PlainMessage.create("BET"),
+            networkType,
+            symbol.UInt64.fromUint(1000000) // 最大手数料設定
+        );
+        // 署名
+        let signedTx = account.sign(tx, GENERATION_HASH);
+        // 送信
+        new symbol.TransactionHttp(NODE_URL)
+            .announce(signedTx)
+            .subscribe((x) => console.log(x), (err) => console.error(err))
+    }
+
+    // 勝利報酬払い出しトランザクション
+    const payoutWinReward = (amount) => {
+        const domain = $gameVariables.value(22);
+        const playerAddress = $gameVariables.value(11);
+        console.log(`${domain}/v1/mosaic-transfer/game-coin?address=${playerAddress}&amount=${amount}`);
+        fetch(`${domain}/v1/mosaic-transfer/game-coin?address=${playerAddress}&amount=${amount}`);
+        console.log("reward")
+    }
 })();

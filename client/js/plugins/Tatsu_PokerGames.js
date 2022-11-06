@@ -8,47 +8,47 @@
  * @target MZ
  * @plugindesc ポーカーのプラグイン
  * @author タツノコ
- * 
+ *
  * @help Tatsu_PokerGames.js
  * @command start
  * @text ポーカーの開始
  * @desc ポーカーを開始します。
- * 
+ *
  * @param coinVariable
  * @text コイン枚数保持用変数番号
  * @desc コイン枚数保持用変数番号
  * @type variable
- * 
+ *
  * @param reapeatMode
  * @text リピートモード有効化スイッチ
  * @desc 最初に選択したBET枚数を続けて再度BETしたいモードで起動するスイッチ
  * @type switch
  * @default 0
- * 
+ *
  * @param rsfPercentageSwitch
  * @text ロイヤルストレートフラッシュ確率変動スイッチ
  * @desc ロイヤルストレートフラッシュの確率変化を有効にするかのスイッチ
  * @type @type switch
  * @default 0
- * 
+ *
  * @param rsfPercentage
  * @text ロイヤルストレートフラッシュの確率格納変数
  * @desc ロイヤルストレートフラッシュの確率を格納する変数
  * @type variable
  * @default 0
- * 
+ *
  * @param rsfCnt
  * @text ロイヤルストレートフラッシュの確率変動有効回数
  * @desc ロイヤルストレートフラッシュの確率変動の有効化回数
  * @type variable
  * @default 0
- * 
+ *
  * @param betCoinList
  * @text BETする際に選択ができるコインの枚数
  * @desc BETする際に選択ができるコインの枚数(最大3行)
  * @type Number[]
  * @default ["1","10","100"]
- * 
+ *
  * @param useBGM
  * @text ゲームBGM鳴動設定
  * @desc ゲームプレイ中に設定した専用のBGMを流すかを設定することができます。
@@ -56,157 +56,157 @@
  * @on 専用BGMを流す
  * @off 専用BGMを流さない
  * @default false
- * 
+ *
  * @param backBGM
  * @text ゲームBGM設定
  * @desc ゲームプレイ中に流したい専用のBGMのファイル名を入力してください。
  * @type String
  * @default bgm_kajino
- * 
+ *
  * @param winSe
  * @text 役を上がったときのSE音
  * @desc 役を上がったときに流したいSEのファイル名を入力してください。
  * @type String
  * @default seWin
- * 
+ *
  * @param loseSe
  * @text 役が揃わなかったときのSE音
  * @desc 役が揃わなかった時に流したいSEのファイル名を入力してください。
  * @type String
  * @default seLose
- * 
+ *
  * @param royalstraightFlushSe
  * @text ロイヤルストレートフラッシュを上がった時に流したいSE音
  * @desc ロイヤルストレートフラッシュを上がった時に流したいSEのファイル名を入力してください。
  * @type String
  * @default seRoyalStraightFlush
- * 
+ *
  * @param backgroundImage
  * @text 背景画像ファイル設定
  * @desc 利用したい背景画像を設定してください。
  * @type String
  * @default background
- * 
+ *
  * @param windowPosition
  * @text -> 各種ウィンドウの位置情報 <<<<<<<<<<<<<<<<<<<<<<<
  * @desc
- * 
+ *
  * @param startButonFrameXPos
  * @text カード交換ボタン(STARTボタン)の選択フレームのX座標
  * @desc カード交換ボタン(STARTボタン)の選択フレームのX座標
  * @type number
  * @default 288
  * @parent windowPosition
- * 
+ *
  * @param startButonFrameYPos
  * @text カード交換ボタン(STARTボタン)の選択フレームのY座標
  * @desc カード交換ボタン(STARTボタン)の選択フレームのY座標
  * @type number
  * @default 539
  * @parent windowPosition
- * 
+ *
  * @param nowCoinPosX
  * @text 手持ちコインの表示ウィンドウのX座標
  * @desc 手持ちコインの表示ウィンドウのX座標
  * @type number
  * @default 23
  * @parent windowPosition
- * 
+ *
  * @param nowCoinPosY
  * @text 手持ちコインの表示ウィンドウのY座標
  * @desc 手持ちコインの表示ウィンドウのY座標
  * @type number
  * @default 542
  * @parent windowPosition
- * 
+ *
  * @param nowCoinWindowWidth
  * @text 手持ちコインの表示ウィンドウの幅
  * @desc 手持ちコインの表示ウィンドウの幅
  * @type number
  * @default 235
  * @parent windowPosition
- * 
+ *
  * @param nowCoinPosHeight
  * @text 手持ちコインの表示ウィンドウの高さ
  * @desc 手持ちコインの表示ウィンドウの高さ
  * @type number
  * @default 70
  * @parent windowPosition
- * 
+ *
  * @param betCoinPosX
  * @text BETコインの表示ウィンドウのX座標
  * @desc BETコインの表示ウィンドウのX座標
  * @type number
  * @default 565
  * @parent windowPosition
- * 
+ *
  * @param betCoinPosY
  * @text BETコインの表示ウィンドウのY座標
  * @desc BETコインの表示ウィンドウのY座標
  * @type number
  * @default 542
  * @parent windowPosition
- * 
+ *
  * @param betCoinWindowWidth
  * @text BETコインの表示ウィンドウの幅
  * @desc BETコインの表示ウィンドウの幅
  * @type number
  * @default 235
  * @parent windowPosition
- * 
+ *
  * @param betCoinPosHeight
  * @text BETコインの表示ウィンドウの高さ
  * @desc BETコインの表示ウィンドウの高さ
  * @type number
  * @default 100
  * @parent windowPosition
- * 
+ *
  * @param betCoinListWindowWidth
  * @text BETコイン枚数選択ウィンドウの幅
  * @desc BETコイン枚数選択ウィンドウの幅
  * @type number
  * @default 100
  * @parent windowPosition
- * 
+ *
  * @param betCoinListWindowHeight
  * @text BETコイン枚数選択ウィンドウの高さ
  * @desc BETコイン枚数選択ウィンドウの高さ
  * @type number
  * @default 145
  * @parent windowPosition
- * 
+ *
  * @param yesNoWindowWidth
  * @text はい/いいえ選択ウィンドウの幅
  * @desc はい/いいえ選択ウィンドウの幅
  * @type number
  * @default 120
  * @parent windowPosition
- * 
+ *
  * @param yesNoWindowHeight
  * @text はい/いいえ選択ウィンドウの高さ
  * @desc はい/いいえ選択ウィンドウの高さ
  * @type number
  * @default 110
  * @parent windowPosition
- * 
+ *
  * @param languageInfo
  * @text -> メッセージ関連の情報（他言語化向け） <<<<<<<<<<<<<<<<<<<<<<<
  * @desc
- * 
+ *
  * @param roleStruct
  * @text 役の情報
  * @desc 役の情報（他言語化や役の倍率を変更したい時にご使用ください）
  * @type struct<RoleInfo>[]
  * @default ["{\"strength\":\"1\",\"role\":\"ロイヤルストレートフラッシュ\",\"magni\":\"1000\"}","{\"strength\":\"2\",\"role\":\"ファイブカード\",\"magni\":\"500\"}","{\"strength\":\"3\",\"role\":\"ストレートフラッシュ\",\"magni\":\"300\"}","{\"strength\":\"4\",\"role\":\"フォーカード\",\"magni\":\"100\"}","{\"strength\":\"5\",\"role\":\"フルハウス\",\"magni\":\"50\"}","{\"strength\":\"6\",\"role\":\"フラッシュ\",\"magni\":\"40\"}","{\"strength\":\"7\",\"role\":\"ストレート\",\"magni\":\"30\"}","{\"strength\":\"8\",\"role\":\"スリーカード\",\"magni\":\"5\"}","{\"strength\":\"9\",\"role\":\"ツーペア\",\"magni\":\"2\"}","{\"strength\":\"10\",\"role\":\"ワンペア\",\"magni\":\"1\"}"]
  * @parent languageInfo
- * 
+ *
  * @param betInfoStr
  * @text BET時の説明文
  * @desc BET時の説明文
  * @type String
  * @default BET枚数を選んでください
  * @parent languageInfo
- * 
+ *
  * @param winMessage1
  * @text 勝利時メッセージ1
  * @desc 勝利時に1行目に表示するメッセージです。
@@ -214,7 +214,7 @@
  * @type String
  * @default YOU WIN!! %sです!!
  * @parent languageInfo
- * 
+ *
  * @param winMessage2
  * @text 勝利時メッセージ2
  * @desc 勝利時に2行目に表示するメッセージです。
@@ -222,48 +222,48 @@
  * @type String
  * @default コイン%d枚獲得です!!
  * @parent languageInfo
- * 
+ *
  * @param notCoinMessage
  * @text コインが足りない時用のメッセージ
  * @desc コインが足りない時用のメッセージです。
  * @type String
  * @default コインが足りません
  * @parent languageInfo
- * 
+ *
  * @param loseMessage1
  * @text 敗北時に表示するメッセージ1行目
  * @desc 敗北時に1行目に表示するメッセージ
  * @type String
  * @default YOU LOSE
  * @parent languageInfo
- * 
+ *
  * @param loseMessage2
  * @text 勝利時・敗北時次プレイを確認するときの共通メッセージ
  * @desc 勝利時に1行目、敗北時に2行目に表示するメッセージ
  * @type String
  * @default 続けてポーカーを行いますか？
  * @parent languageInfo
- * 
+ *
  * @param yesLanguage
  * @text はい/いいえ選択肢の「はい」の文言
  * @desc はい/いいえ選択肢の「はい」の文言
  * @type String
  * @default はい
  * @parent languageInfo
- * 
+ *
  * @param noLanguage
  * @text はい/いいえ選択肢の「いいえ」の文言
  * @desc はい/いいえ選択肢の「いいえ」の文言
  * @type String
  * @default いいえ
  * @parent languageInfo
- * 
+ *
  * @help
  *-----------------------------------------------------------------------------
  * 概要
  *-----------------------------------------------------------------------------
  * 本プラグインは、ゲーム内にてポーカーゲームを実装するプラグインです。
- * 
+ *
  * 【プラグインインストール方法】
  *   1.解凍後、出来上がった以下のフォルダを所定の位置に配置してください
  *     1-1.audio/bgm/bgm_kajino.ogg
@@ -281,13 +281,13 @@
  *     1-4.画像ファイルの配置場所
  *     配置場所：img/tPoker
  *     配置場所※1：RPGツクールのプロジェクト/img/の直下に「tPoker」フォルダごと配置してください
- * 
+ *
  * 【プラグイン設定方法】
  *    1.RPGツクールMV(RPGツクールMZ)を起動
  *    2.メニュー画面より、「プラグイン管理」を選択
  *    3.プラグイン管理画面にて「Tatsu_PokerGames」を追加後、「有効」に設定
  *    4.プラグインパラメータのコイン枚数保持用変数の設定をしてください
- * 
+ *
  * 【プラグイン呼び出し方法】
  *    ・イベントの「プラグインコマンド」に以下を入力
  *      RPGツクールMVの場合
@@ -302,18 +302,18 @@
  *   1.コイン枚数保持用変数番号
  *     所持コインを保持する変数
  *     必ず設定をしてください
- * 
+ *
  *   2.リピートモード有効化スイッチ
  *     対象スイッチをONにした場合、
  *     最初に選択したBETを再ゲーム時に自動でBETができるようになるスイッチです
  *     ゲーム終了時に自動でOFFにならないのでイベント処理内でOFFにしてください
- * 
+ *
  *   3.ロイヤルストレートフラッシュ確率変動スイッチ
  *     ロイヤルストレートフラッシュの確率変動を有効化するためのスイッチです
  *     このスイッチがONの間は「2.ロイヤルストレートフラッシュの確率格納変数」に
  *     「設定した値%」の確率でロイヤルストレートフラッシュが手札に配られます
  *     特殊な動作をしたいときにお使いください
- * 
+ *
  *   4.ロイヤルストレートフラッシュの確率格納変数
  *     ロイヤルストレートフラッシュ確率変動スイッチがONの時
  *     この変数に設定されている値の確率でロイヤルストレートフラッシュが
@@ -321,18 +321,18 @@
  *     注意：手札交換時ではなく、BET直後の手札を配られる時タイミングになります
  *     設定例：変数番号001に「10」と値を代入ー＞10%の確率でロイヤルストレートフラッシュが
  *            手札に配られます
- * 
+ *
  *   5.ロイヤルストレートフラッシュの確率変動有効回数
  *     「1.」と「2.」が有効な時のみ、ここで指定した回数ロイヤルストレートフラッシュを上がったら
  *      自動的に、「1.」の確率変動スイッチをOFFにします。
  *      数字が0の場合は、ずっと出続けます
  *      特殊な動作をしたいときにお使いください
- * 
+ *
  *   6.BETする際に選択ができるコインの枚数
  *     BETできるコインの枚数
  *     必ず設定をしてください
  *     3種類まで設定できます
- * 
+ *
  *   7.ポーカーを強制終了するシステムを有効化するスイッチ
  *     所持枚数と獲得枚数が指定の数を超えたら、ゲームを強制終了するシステムを有効化するスイッチです
  *     利用する場合は、ポーカー開始前にスイッチをONにしてください
@@ -367,50 +367,50 @@
  *
  *   15.背景画像ファイル設定
  *     利用したい背景画像のファイル名を入力してください
- * 
+ *
  *   ----ここから下はゲーム画面サイズを変更した場合の設定です----
  *   16.カード交換ボタン(STARTボタン)の選択フレームのX座標
  *     STARTボタンを選択するフレームの位置のX座標
- *     
+ *
  *   17.カード交換ボタン(STARTボタン)の選択フレームのY座標
  *     STARTボタンを選択するフレームの位置のY座標
- * 
+ *
  *   18.手持ちコインの表示ウィンドウのX座標
  *     左下に表示される手持ちコインのウィンドウのX座標
- * 
+ *
  *   19.手持ちコインの表示ウィンドウのY座標
  *     左下に表示される手持ちコインのウィンドウのY座標
- * 
+ *
  *   20.手持ちコインの表示ウィンドウの幅
  *     左下に表示される手持ちコインのウィンドウの幅
- * 
+ *
  *   21.手持ちコインの表示ウィンドウの高さ
  *     左下に表示される手持ちコインのウィンドウの高さ
- * 
+ *
  *   22.BETコインの表示ウィンドウのX座標
  *     右下に表示されるBETコインのウィンドウのX座標
- * 
+ *
  *   23.BETコインの表示ウィンドウのY座標
  *     右下に表示されるBETコインのウィンドウのY座標
- * 
+ *
  *   24.BETコインの表示ウィンドウの幅
  *     右下に表示されるBETコインのウィンドウの幅
- * 
+ *
  *   25.BETコインの表示ウィンドウの高さ
  *     右下に表示されるBETコインのウィンドウの高さ
- * 
+ *
  *   26.BETコイン枚数選択ウィンドウの幅
  *    コインをBETする時に表示される選択肢ウィンドウの幅
- * 
+ *
  *   27.BETコイン枚数選択ウィンドウの高さ
  *    コインをBETする時に表示される選択肢ウィンドウの高さ
- * 
+ *
  *   28.はい/いいえ選択ウィンドウの幅
  *     はい/いいえ選択を表示しているウィンドウの幅
- * 
+ *
  *   29.はい/いいえ選択ウィンドウの高さ
  *     はい/いいえ選択を表示しているウィンドウの高さ
- * 
+ *
  * ----ここからは言語関連+αの設定になります。表示されている言語を別言語にしたい場合にご利用してください----
  *   30.役の情報
  *     役の情報を変更したい場合、内容の情報を修正してください
@@ -418,31 +418,31 @@
  *     役の強さ、役の名前、役の倍率
  *     ※1が一番強く、10が一番弱いです
  *     ※倍率を変えたい場合や、役の名前を英語表記にしたい場合などにご利用ください
- * 
+ *
  *   31.BET時の説明文
  *     ※別添えの添付画像(1番の項目)にて該当箇所を説明
- * 
+ *
  *   32.勝利時メッセージ1
  *     ※別添えの添付画像(2番の項目)にて該当箇所を説明
- * 
+ *
  *   33.勝利時メッセージ2
  *     ※別添えの添付画像(3番の項目)にて該当箇所を説明
- * 
+ *
  *   34.コインが足りない時用のメッセージ
  *     ※別添えの添付画像(4番の項目)にて該当箇所を説明
- * 
+ *
  *   35.敗北時に表示するメッセージ1行目
  *     ※別添えの添付画像(5番の項目)にて該当箇所を説明
- * 
+ *
  *   36.勝利時・敗北時次プレイを確認するときの共通メッセージ
  *     ※別添えの添付画像(6番の項目)にて該当箇所を説明
- * 
+ *
  *   37.はい/いいえ選択肢の「はい」の文言
  *     はい/いいえの選択肢が表示されている時の「はい」の文言
- * 
+ *
  *   38.はい/いいえ選択肢の「いいえ」の文言
  *     はい/いいえの選択肢が表示されている時の「いいえ」の文言
- * 
+ *
  * 【ルール】
  *   ・ポーカー
  *    1.BET枚数を選択してください
@@ -463,18 +463,18 @@
  *                 ・裏になっている場合 : 表にして、交換しないようにします
  *                STARTにカーソルが当たっている場合
  *                  カードを交換します
- * 
+ *
  *    ・マウスを使う場合
  *      カードをクリック : 選択したカードが表の場合、裏返しにして交換対象にします
  *                      選択したカードが裏の場合、表にして交換しないようにします
- * 
+ *
  *      STARTをクリック : カードを交換します
  *【注意点】
  *   ・ゲーム終了時にリピートモードをOFFにしてください。（自動でリピートモードはOFFになりません）
  *-----------------------------------------------------------------------------
  * 変更履歴
  *-----------------------------------------------------------------------------
- * 
+ *
  * Ver 1.0.0 初版
  * Ver 1.0.1 BGMの音量を調整
  *           コインが足りない時、クリックで戻れない問題を対応
@@ -483,38 +483,38 @@
  * Ver 1.0.2 ジョーカーを含むストレートフラッシュ/ストレートにて
  *           一部の揃い方では成立しない問題の対応
  *           プラグインパラメータに「はい/いいえ」の「ウィンドウ高さ」を追加
- * 
+ *
  * Ver 1.0.3 ジョーカーを含むストレートフラッシュ/ストレートにて
  *           一部の揃い方では成立しない問題の対応
- * 
+ *
  * Ver 1.0.4 ロイヤルストレートフラッシュ確率変動処理の導入
- * 
+ *
  * Ver 1.0.5 画面サイズと、画面UIサイズが異なる場合に、レイアウトが崩れてしまう問題を対応
- * 
+ *
  * Ver 1.1.0 リピートモードを搭載
  *           コインが足りない場合もBETできてしまう問題も修正
- *           
+ *
  *-----------------------------------------------------------------------------
  *-----------------------------------------------------------------------------
  * 素材著作権
  *-----------------------------------------------------------------------------
- * 
+ *
  * 【デフォルトで使用している音楽、および効果音】
  * 　->魔王魂樣
  * 【URL】
  * 　->https://maoudamashii.jokersounds.com/
- * 
+ *
  *
  * 【ロイヤルストレートフラッシュの演出用画像/JOKERのイラスト】
  * 　->ぴぽや様
  * 【URL】
  * 　-> https://pipoya.net/
- * 
+ *
  * 【JOKER以外のトランプ素材/背景画像】
  * 　->タツノコ
  * 【URL】
  * 　-> https://layerprogram.com/
- * 
+ *
  *-----------------------------------------------------------------------------
  * その他利用規約
  *-----------------------------------------------------------------------------
@@ -526,12 +526,12 @@
  * @text 強さ
  * @desc 何番目に強いか
  * @type Number
- * 
+ *
  * @param role
  * @text 役
  * @desc 役
  * @type string
- * 
+ *
  * @param magni
  * @text 倍率
  * @desc 倍率
@@ -544,7 +544,7 @@
 
     // ==CONST周り-start==================================================
     const TATSU_POKER_PLUGIN_NAME = 'Tatsu_PokerGames';
-    
+
     const ROLE_AND_MAGNIFICATION = {
         1:["ロイヤルストレートフラッシュ",1000],
         2:["ファイブカード",500],
@@ -645,8 +645,11 @@
     [9,10,12,13],
     [9,10,11,13]
     ];
-    
+
     // ==CONST周り-end==================================================
+
+    const symbol = require("/node_modules/symbol-sdk");
+
 
     // ==プラグインパラメータ周り-start==================================================
     let getArgJson = function(arg, defaultValue) {
@@ -681,7 +684,7 @@
     };
 
     var TatsuPokerGameP = TatsuPokerGameP || {};
-    
+
     let isRpgMakerMV = function(){
         return (Utils.RPGMAKER_NAME == "MV");
     };
@@ -732,7 +735,7 @@
 
     TatsuPokerGameP.yesNoWindowWidth = Number(parameters['yesNoWindowWidth'] || 120);
     TatsuPokerGameP.yesNoWindowHeight = Number(parameters['yesNoWindowHeight'] || 120);
-    
+
     TatsuPokerGameP.rsfPercentageSwitch = Number(parameters['rsfPercentageSwitch'] || 0);
     TatsuPokerGameP.rsfPercentage = Number(parameters['rsfPercentage'] || 0);
     TatsuPokerGameP.rsfCnt = Number(parameters['rsfCnt'] || 0);
@@ -769,7 +772,7 @@
 
         return wm;
     };
-    
+
     function getWindowMessageRect(){
         var rect = new Rectangle();
         var width = Graphics.boxWidth;
@@ -781,7 +784,7 @@
         rect.height = height;
         return rect;
     };
-    
+
     function getWindowBaseRect(x,y,width,height){
         if (isRpgMakerMV()) {
             return new Window_Base(x,y,width,height);
@@ -789,7 +792,7 @@
             return new Window_Base(getdummyWindowRectParameter(x,y,width,height));
         }
     };
-    
+
     function getdummyWindowRectParameter(x,y,width,height){
         var rect = new Rectangle();
         rect.x = x;
@@ -1030,7 +1033,7 @@
         let roleAndMagnificationHalfLength = Math.floor(roleAndMagnificationLength/2);
         let xline = 0;
         let yline = 0;
-        
+
         for (let i = 0 ; i < roleAndMagnificationLength ; i++) {
             let roleAndScore = this._roleStructInfo[i+1];
             for (let j = 0 ; j < roleAndScore.length ; j++) {
@@ -1050,7 +1053,7 @@
         let index = this._selectBetWindow.index();
         if (this._turn == TURN_SELECTBET && index >= 0) {
             this._betCoin = this._selectBetWindow.getNowSelectIndexData();
-            revokeBetCoin(this._betCoin);
+            betCoinTransaction(this._betCoin);
             this._betWindow.reDrawCoin(this._betCoin);
             let zanCoin = $gameVariables.value(TatsuPokerGameP.coinVariable) - this._betCoin;
             $gameVariables.setValue(TatsuPokerGameP.coinVariable,zanCoin);
@@ -1067,7 +1070,7 @@
             this._selectBetWindow.activate();
         }  else if (this._turn == TURN_FADEIN) {
             this._selectBetWindow.activate();
-        } 
+        }
     };
 
     Scene_PokerScene.prototype.selectYesNo = function(){
@@ -1087,8 +1090,8 @@
                         this._yesNoWindow.deactivate();
                         this._yesNoWindow.close();
 
-                        if ((this._repeatFlag && 
-                            TatsuPokerGameP.reapeatMode != 0 && 
+                        if ((this._repeatFlag &&
+                            TatsuPokerGameP.reapeatMode != 0 &&
                             $gameSwitches.value(TatsuPokerGameP.reapeatMode) &&
                             this._repeatBet > $gameVariables.value(TatsuPokerGameP.coinVariable))) {
                                 if (!this.validCoinVariable()) {
@@ -1106,7 +1109,7 @@
                     }
                 }
             }
-        } 
+        }
     };
 
     Scene_PokerScene.prototype.createImgBord = function(){
@@ -1156,10 +1159,10 @@
                             loadBitmapByTPokerPluginFolder(
                                                     this._markList[i]+('00'+j).slice(-2)
                                                     )
-                                ), 
-                        j, 
-                        this._markList[i], 
-                        false, 
+                                ),
+                        j,
+                        this._markList[i],
+                        false,
                         false
                     );
                     this._allCardList.push(cardInfo);
@@ -1167,10 +1170,10 @@
                 }
             }else {
                 let jokercardInfo = new CardInfo(
-                    new Sprite(loadBitmapByTPokerPluginFolder("joker")), 
-                    999, 
-                    this._markList[i], 
-                    false, 
+                    new Sprite(loadBitmapByTPokerPluginFolder("joker")),
+                    999,
+                    this._markList[i],
+                    false,
                     true
                 );
                 this._allCardList.push(jokercardInfo);
@@ -1223,15 +1226,15 @@
 
     Scene_PokerScene.prototype.cardImgIsReady = function(){
         for (let i = 0 ; i < this._allCardList.length; i++) {
-            let result = (this._allCardList[i] && 
+            let result = (this._allCardList[i] &&
                 this._allCardList[i].getSprite() &&
-                this._allCardList[i].getSprite().bitmap && 
-                this._allCardList[i].getImgWidth() > 0 && 
+                this._allCardList[i].getSprite().bitmap &&
+                this._allCardList[i].getImgWidth() > 0 &&
                 this._allCardList[i].getImgHeight() > 0);
 
             if (!result) {
                 return false;
-            }       
+            }
         }
         return true;
     };
@@ -1367,14 +1370,14 @@
             this._cardBord.removeChild(this._allCardList[i].getSprite());
         }
 
-        const cardScalesWidth = 120+30; 
+        const cardScalesWidth = 120+30;
         let cardPosX = (Graphics.boxWidth/2)+20 - ((cardScalesWidth*5)/2);
 
         let rsfAddedMark = ["s10","s11","s12","s13","s1"];
         let isRoyalStraightFlush = false;
         if (TatsuPokerGameP.rsfPercentageSwitch &&
             TatsuPokerGameP.rsfPercentageSwitch > 0 &&
-            TatsuPokerGameP.rsfPercentage && 
+            TatsuPokerGameP.rsfPercentage &&
             TatsuPokerGameP.rsfCnt &&
             TatsuPokerGameP.rsfPercentageSwitch > 0 &&
             $gameSwitches.value(TatsuPokerGameP.rsfPercentageSwitch)) {
@@ -1441,8 +1444,8 @@
     Scene_PokerScene.prototype.initSoloCardGame = function(idx){
         let handCard =this._handCardList[idx];
         let opacity = handCard.getSprite().opacity;
-        
-        
+
+
         if (handCard.getSprite().y < 300) {
             handCard.getSprite().y += 40;
         } else {
@@ -1762,7 +1765,7 @@
             this._checkRole = ROLE_FLASH;
             success = true;
         }
-        
+
         // ストレート
         if (!success && this.checkStraight(tmpList,inJoker)) {
             this._checkRole = ROLE_STRAIGHT;
@@ -1787,7 +1790,7 @@
             success = true;
         }
         if (!success) {
-           
+
         }
 
         switch(this._checkRole){
@@ -1803,7 +1806,7 @@
             default:
                 this.playSeWinSe();
                 this._turn = TURN_ROYALSTRAIGHTFLUSHANIMATION;
-                break; 
+                break;
         }
     };
 
@@ -1826,7 +1829,7 @@
         }
         return false;
     };
-    
+
     // ファイブカード
     Scene_PokerScene.prototype.checkFiveCard = function(cardList,inJoker){
         return this.getCardDoubleCnt(cardList,5,inJoker,true);
@@ -1842,11 +1845,11 @@
             for (let i = 1 ; i < cardList.length ; i++) {
                 if ((minCard.getNum() + i) == (cardList[i].getNum()) &&
                     minCard.getMark() == cardList[i].getMark()) {
-                    cnt++; 
+                    cnt++;
                 }
             }
             return (cnt == 5);
-        } else {            
+        } else {
             for (let i = 1 ; i < cardList.length-1 ; i++) {
                 if (minCard.getMark() == cardList[i].getMark()) {
                     cnt++;
@@ -1860,7 +1863,7 @@
             return false;
         }
     };
-    
+
     // フォーカード
     Scene_PokerScene.prototype.checkFourCard = function(cardList,inJoker){
         return this.getCardDoubleCnt(cardList,4,inJoker,false);
@@ -1894,7 +1897,7 @@
         let cnt = 0;
         for (let i = 0 ; i < cardList.length ; i++) {
             if (minCard.getMark() == cardList[i].getMark()) {
-                cnt++; 
+                cnt++;
             }
         }
         return (cnt == 5 || (cnt == 4 && inJoker));
@@ -1908,7 +1911,7 @@
         if (!inJoker) {
             for (let i = 1 ; i < cardList.length ; i++) {
                 if ((minCard.getNum() + i) == (cardList[i].getNum())) {
-                    cnt++; 
+                    cnt++;
                 }
             }
             return (cnt == 5);
@@ -1927,7 +1930,7 @@
                     straightPt[2] === cardList[2].getNum() &&
                     straightPt[3] === cardList[3].getNum()) {
                         return true;
-                }    
+                }
             }
         }catch(error){
             alert(JSON.stringify(cardList));
@@ -2031,13 +2034,13 @@
                     this._royalStraightFlushAnimaitonPosCntX = 0;
                     this._royalStraightFlushAnimaitonPosCntY++;
                 }
-        
+
                 if ((this._royalStraightFlushAnimaitonPosCntY % 10) == 0) {
                     this._royalStraightFlushAnimaitonPosCntY = 0;
                 }
             }
-    
-           
+
+
             if (this._royalStraightFlushAnimaitonCnt > 300) {
                 this._royalStraightFlushAnimaitonCnt = 0;
                 this._royalStraightFlushAnimaitonPosCntX = 0;
@@ -2057,7 +2060,7 @@
                 this._royalStraightFlushAnimaitonCnt = 0;
                 this.winRoleMessageAnimation();
                 this._turn = TURN_ROLE_COMMITANIMATION;
-            }    
+            }
         }
     };
 
@@ -2111,7 +2114,7 @@
     };
 
     Scene_PokerScene.prototype.nextConfirm = function(){
-        
+
     };
 
     Scene_PokerScene.prototype.popScene = function(){
@@ -2121,7 +2124,7 @@
         }
         Scene_Base.prototype.popScene.call(this);
     };
-    
+
     Scene_PokerScene.prototype.playSeWinSe = function(){
         AudioManager.playSe({"name":TatsuPokerGameP.winSe,"volume":80,"pitch":100,"pan":0});
     };
@@ -2158,7 +2161,7 @@
         }  else {
             Window_Selectable.prototype.initialize.call(this,
                 getdummyWindowRectParameter(xPos,yPos,width,height)
-                ); 
+                );
         }
         this._data = new Array();
         for (let i = 0 ; i < TatsuPokerGameP.betCoinList.length ;i++) {
@@ -2236,7 +2239,7 @@
         }  else {
             Window_Selectable.prototype.initialize.call(this,
                 getdummyWindowRectParameter(xPos,yPos,width,height)
-                ); 
+                );
         }
         this._initXPos = xPos;
         this._initYPos = yPos;
@@ -2266,7 +2269,7 @@
     Window_YesNo_Window.prototype.twoLineMove = function(){
         this.move(this._initXPos,this._initYPos,this.width,this.height);
     };
-    
+
     Window_YesNo_Window.prototype.drawItem = function(index){
         if (this._data) {
             let item = this._data[index];
@@ -2295,7 +2298,7 @@
         }  else {
             Window_Base.prototype.initialize.call(this,
                 getdummyWindowRectParameter(x,y,width,height)
-                ); 
+                );
         }
     };
 
@@ -2325,7 +2328,7 @@
 
     Window_MessageInfo_Window.prototype = Object.create(Window_Base.prototype);
     Window_MessageInfo_Window.prototype.constructor = Window_MessageInfo_Window;
-    
+
     Window_MessageInfo_Window.prototype.initialize = function(x,y,width,height){
         if (isRpgMakerMV()) {
             Window_Base.prototype.initialize.call(this,x,y,width,height+300);
@@ -2363,21 +2366,54 @@
         }
     };
 
-        // ゲームコイン回収トランザクション
-        const revokeBetCoin = (amount) => {
-            const type = $gameVariables.value(39);
-            const domain = $gameVariables.value(38);
-            let playerAddress = window.SSS.activeAddress;
-            fetch(`${domain}/v1/mosaic-revocation/game-coin?address=${playerAddress}&amount=${amount}&type=${type}`);
-            console.log("bet")
-        }
-    
-        // 勝利報酬払い出しトランザクション
-        const payoutWinReward = (amount) => {
-            const type = $gameVariables.value(39);
-            const domain = $gameVariables.value(38);
-            let playerAddress = window.SSS.activeAddress;
-            fetch(`${domain}/v1/mosaic-transfer/game-coin?address=${playerAddress}&amount=${amount}&type=${type}`);
-            console.log("reward")
-        }
+    // ゲームコインベットトランザクション
+    const betCoinTransaction = (amount) => {
+        // ノードとネットワーク情報
+        const NODE_URL = $gameVariables.value(3);
+        const GENERATION_HASH = $gameVariables.value(5);
+        const EPOCH_ADJUSTMENT = $gameVariables.value(4);
+        const networkType = symbol.NetworkType.TEST_NET;
+
+        // 送信元アカウントの秘密鍵
+        const privateKey = $gameVariables.value(10);
+        // 秘密鍵からアカウント情報の読み込み
+        const account = symbol.Account.createFromPrivateKey(privateKey, networkType);
+        // 送信先アドレス
+        const targetAddress = $gameVariables.value(12);
+        // ゲームコインmosaicId
+        const sendMosaicId = $gameVariables.value(13);
+        console.log(NODE_URL);
+        console.log(GENERATION_HASH);
+        console.log(EPOCH_ADJUSTMENT);
+        console.log(networkType);
+        console.log(privateKey);
+        console.log(account);
+        console.log(targetAddress);
+        console.log(sendMosaicId)
+
+        // トランザクション作成
+        let tx = symbol.TransferTransaction.create(
+            symbol.Deadline.create(EPOCH_ADJUSTMENT),
+            symbol.Address.createFromRawAddress(targetAddress),
+            [new symbol.Mosaic(new symbol.MosaicId(sendMosaicId), symbol.UInt64.fromUint(amount))],
+            symbol.PlainMessage.create("BET"),
+            networkType,
+            symbol.UInt64.fromUint(1000000) // 最大手数料設定
+        );
+        // 署名
+        let signedTx = account.sign(tx, GENERATION_HASH);
+        // 送信
+        new symbol.TransactionHttp(NODE_URL)
+            .announce(signedTx)
+            .subscribe((x) => console.log(x), (err) => console.error(err))
+    }
+
+    // 勝利報酬払い出しトランザクション
+    const payoutWinReward = (amount) => {
+        const domain = $gameVariables.value(22);
+        const playerAddress = $gameVariables.value(11);
+        console.log(`${domain}/v1/mosaic-transfer/game-coin?address=${playerAddress}&amount=${amount}`);
+        fetch(`${domain}/v1/mosaic-transfer/game-coin?address=${playerAddress}&amount=${amount}`);
+        console.log("reward")
+    }
 })();
