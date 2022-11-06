@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="17db542e-e444-4a1f-a093-c0f78bb972c1" name="crypto-casino">
+        <fileTransfer rootFolder="/home/ec2-user/crypto-casino" accessType="SFTP" host="teri-tools" port="22" sshConfigId="e7b106d2-93d4-44b6-8a2d-060dd1b773dc" sshConfig="ec2-user@teri-tools:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

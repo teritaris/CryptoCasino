@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="teri-tools" id="e7b106d2-93d4-44b6-8a2d-060dd1b773dc" keyPath="$USER_HOME$/.ssh/aws.pem" port="22" nameFormat="DESCRIPTIVE" username="ec2-user" />
+    </configs>
+  </component>
+</project>
